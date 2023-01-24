@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+import { AmityUiKitProvider, AmityUiKitSocial } from "@amityco/ui-kit";
+
+import AmityClient, { ApiRegion } from "@amityco/js-sdk";
+
+const apiKey = "b0efeb583a88f0614f33891a5b0a168884008eb4e9346e2b";
+
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <AmityUiKitProvider
+          key="123"
+          apiKey={apiKey}
+          apiEndpoint="https://api.us.amity.co"
+          apiRegion="https://api.us.amity.co"
+          userId="123"
+          displayName="Jonathan"
         >
-          Learn React
-        </a>
-      </header>
+          <AmityUiKitSocial />
+        </AmityUiKitProvider>
     </div>
   );
 }
-
-export default App;
